@@ -11,12 +11,6 @@ public class TestFormTests extends TestBase{
 
     TestFormPage testFormPage = new TestFormPage();
 
-    @BeforeAll
-    static void setup() {
-        Configuration.startMaximized = true;
-        Configuration.baseUrl="https://demoqa.com";
-    }
-
     @Test
     void fillFormTestWithPageObject(){
         step("Open student registration form", () -> {

@@ -13,7 +13,12 @@ import static helpers.AttachmentHelper.*;
 public class TestBase {
     @BeforeAll
     static void setup(){
-        addListener("AllureSelenide", new AllureSelenide());
+        Configuration.startMaximized = true;
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @AfterEach

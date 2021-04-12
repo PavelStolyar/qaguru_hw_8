@@ -20,7 +20,7 @@ public class TestFormPage {
     String address = faker.address().streetAddress();
     String state = "NCR";
     String city = "Delhi";
-    String mainPageUrl = "/automation-practice-form";
+    String mainPageUrl = "https://demoqa.com/automation-practice-form";
 
 
     public void openPage() {
