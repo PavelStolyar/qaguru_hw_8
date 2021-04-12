@@ -5,7 +5,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.TestFormPage;
 
-public class TestFormTests {
+import static io.qameta.allure.Allure.step;
+
+public class TestFormTests extends TestBase{
 
     TestFormPage testFormPage = new TestFormPage();
 
@@ -16,10 +18,17 @@ public class TestFormTests {
     }
 
     @Test
-    void fillFormTestWithPageObject() {
-        testFormPage.openPage();
-        testFormPage.fillForm();
-        testFormPage.formVerification();
+    void fillFormTestWithPageObject(){
+        step("Open student registration form", () -> {
+            testFormPage.openPage();
+        });
 
+        step("Fill needed fields", () -> {
+            testFormPage.fillForm();
+        });
+
+        step("Verified form",() -> {
+            testFormPage.formVerification();
+        });
     }
 }
